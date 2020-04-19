@@ -1,0 +1,34 @@
+.toolbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: #F5F5F5;
+    height: 60px;
+}
+
+.navbar_logodiv {
+    display: flex;
+    height: 100%;
+    align-items: center;
+
+}
+
+.navbar_logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+}
+
+.navbar_appname {
+    color: black;
+    text-decoration: grey;
+    font-size: 2rem;
+
+}
+
+.toolbar_buttons {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+}

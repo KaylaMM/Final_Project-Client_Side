@@ -1,12 +1,15 @@
 import React from "react";
 import NavBar from "./components/NavBar/NavBar";
-import logo from "./logo.svg";
 import "./App.css";
+import "typeface-roboto";
 
 function App() {
   return (
-    <div className="App">
-      <NavBar></NavBar>
+    <div>
+      <NavBar />
+      <main style={{ marginTop: "64px" }}>
+        <p>This is the User Profile</p>
+      </main>
     </div>
   );
 }
