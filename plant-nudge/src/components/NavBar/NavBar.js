@@ -6,6 +6,8 @@ import "./NavBar.css";
 
 console.log(plantNudgeLogo);
 
+const homeButton = (props) => <button></button>;
+
 class NavBar extends React.Component {
   render() {
     return (
@@ -13,12 +15,14 @@ class NavBar extends React.Component {
         <nav position="static" className="navbar">
           <div className="navbar_logodiv">
             <img className="navbar_logo" src={plantNudgeLogo} alt="logo" />
+            <div className="spacer" />
             <Typography className="navbar_appname" varient="title">
               Plant Nudge
             </Typography>
-            <div className="toolbar_buttons">
-              <button>Log Out</button>
-            </div>
+          </div>
+          <div className="toolbar_buttons">
+            <button>Home</button>
+            <button>Log Out</button>
           </div>
         </nav>
       </header>

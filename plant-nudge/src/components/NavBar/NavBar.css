@@ -11,6 +11,7 @@
     display: flex;
     height: 100%;
     align-items: center;
+    padding: 0.3rem 1rem;
 
 }
 
@@ -18,17 +19,34 @@
     width: 50px;
     height: 50px;
     border-radius: 8px;
+
+}
+
+.spacer {
+    flex: 0.01;
 }
 
 .navbar_appname {
     color: black;
     text-decoration: grey;
     font-size: 2rem;
-
+    /* padding-left: 1rem; */
 }
 
 .toolbar_buttons {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     flex-direction: row-reverse;
+    margin-right: 1rem;
+}
+
+/* styling on button */
+.toolbar_buttons button {
+    margin-right: 20rem;
+}
+
+.toolbar_buttons button:hover,
+.toolbar_buttons button:active {
+    color: #08d759;
 }
