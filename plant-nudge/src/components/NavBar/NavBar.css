@@ -7,6 +7,11 @@
     height: 60px;
 }
 
+.navbar {
+    display: flex;
+    justify-content: space-between;
+}
+
 .navbar_logodiv {
     display: flex;
     height: 100%;
@@ -19,6 +24,7 @@
     width: 50px;
     height: 50px;
     border-radius: 8px;
+
 
 }
 
@@ -36,14 +42,7 @@
 .toolbar_buttons {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    flex-direction: row-reverse;
-    margin-right: 1rem;
-}
-
-/* styling on button */
-.toolbar_buttons button {
-    margin-right: 20rem;
+    margin-right: 2rem;
 }
 
 .toolbar_buttons button:hover,

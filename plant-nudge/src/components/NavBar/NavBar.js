@@ -4,12 +4,27 @@ import plantNudgeLogo from "../../Assets/plantNudgeLogo.png";
 
 import "./NavBar.css";
 
-console.log(plantNudgeLogo);
-
-const homeButton = (props) => <button></button>;
+// const homeButton = (props) => <button></button>;
 
 class NavBar extends React.Component {
+  state = {
+    userLoggedIn: true,
+  };
+
+  logoutToggleClickHandler = () => {
+    this.setState((prevState) => {
+      return { userLoggedIn: !prevState.userLoggedIn };
+    });
+  };
+
   render() {
+    const userNavButtons = this.state.userLoggedIn ? (
+      <div className="toolbar_buttons">
+        <button className="home-button">Home</button>
+        <button className="logout-button">Log Out</button>
+      </div>
+    ) : null;
+
     return (
       <header className="toolbar">
         <nav position="static" className="navbar">
@@ -20,10 +35,7 @@ class NavBar extends React.Component {
               Plant Nudge
             </Typography>
           </div>
-          <div className="toolbar_buttons">
-            <button>Home</button>
-            <button>Log Out</button>
-          </div>
+          {userNavButtons}
         </nav>
       </header>
     );
