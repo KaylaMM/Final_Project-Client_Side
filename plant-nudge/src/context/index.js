@@ -128,4 +128,4 @@ class AuthProvider extends React.Component {
   }
 }
 
-export default withRouter(AuthProvider);
+export default withRouter(AuthContext, AuthProvider);
