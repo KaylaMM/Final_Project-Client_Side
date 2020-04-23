@@ -8,6 +8,7 @@ class Home extends Component {
   render() {
     return (
       <div>
+        <img src=""></img>
         <h3> WELCOME TO </h3>
         <h1> Plant Nudge </h1>
         <h3> and app to help you remember when to water your urban oasis!</h3>
