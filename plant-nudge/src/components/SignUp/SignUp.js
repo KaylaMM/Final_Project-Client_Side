@@ -44,7 +44,7 @@ class SignUp extends Component {
                         id="email"
                         name="email"
                         type="email"
-                        value={email}
+                        // value={email}
                         onChange={handleSignupInput}
                       />
                     </label>
@@ -60,7 +60,7 @@ class SignUp extends Component {
                     </label>
                     <button>Sign Up</button>
                   </form>
-                  {message && <div>{message}</div>}
+                  {/* {message && <div>{message}</div>} */}
                 </>
               )}
             </>
