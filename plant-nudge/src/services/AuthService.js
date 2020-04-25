@@ -1,31 +1,34 @@
 import axios from "axios";
+import { ThemeProvider } from "@material-ui/core";
 
-const baseURL = process.env.REACT_APP_SERVER_POINT;
+class AuthService {
+  constructor() {
+    let service = axios.create({
+      baseURL: `${process.env.REACT_APP_BASE}/auth`,
+      withCredentials: true,
+    });
+    this.service = service;
+  }
 
-const service = axios.create({
-  baseURL,
-  withCredentials: true,
-});
+  signup = (username, email, password) => {
+    return this.service
+      .post("/signup", { username: username, password: password })
+      .then((response) => response.data);
+  };
 
-const AUTH_SERVICE = {
-  // userData is a placeholder (represents the user's inputs in the signup and login form)
-  signup(userData) {
-    // const { username, email, password } = req.body; <===> userData
-    // console.log('user data in the service: ', userData);
-    return service.post("/api/signup", userData);
-  },
+  login = (username, password) => {
+    return this.service
+      .post("/login", { username, password })
+      .then((response) => response.data);
+  };
 
-  login(userData) {
-    return service.post("/api/login", userData);
-  },
+  currentUser = () => {
+    return this.service.get("/isLoggedIn").then((response) => response.data);
+  };
 
-  logout() {
-    return service.post("/api/logout", {});
-  },
+  logout = () => {
+    return this.service.post("/logout", {}).then((response) => response.data);
+  };
+}
 
-  getUser() {
-    return service.get("/api/isLoggedIn");
-  },
-};
-
-export default AUTH_SERVICE;
+export default AuthService;
