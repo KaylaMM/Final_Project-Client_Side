@@ -1,34 +1,28 @@
 import axios from "axios";
-import { ThemeProvider } from "@material-ui/core";
 
-class AuthService {
-  constructor() {
-    let service = axios.create({
-      baseURL: `${process.env.REACT_APP_BASE}/auth`,
-      withCredentials: true,
-    });
-    this.service = service;
-  }
+const baseURL = process.env.REACT_APP_SERVER_POINT;
 
-  signup = (username, email, password) => {
-    return this.service
-      .post("/signup", { username: username, password: password })
-      .then((response) => response.data);
-  };
+const service = axios.create({
+  baseURL,
+  withCredentials: true,
+});
 
-  login = (username, password) => {
-    return this.service
-      .post("/login", { username, password })
-      .then((response) => response.data);
-  };
+const AUTH_SERVICE = {
+  signup(userData) {
+    return service.post("/signup", userData);
+  },
 
-  currentUser = () => {
-    return this.service.get("/isLoggedIn").then((response) => response.data);
-  };
+  login(userData) {
+    return service.post("/login", userData);
+  },
 
-  logout = () => {
-    return this.service.post("/logout", {}).then((response) => response.data);
-  };
-}
+  logout() {
+    return service.post("/logout", {});
+  },
 
-export default AuthService;
+  getUser() {
+    return service.get("/isLoggedIn");
+  },
+};
+
+export default AUTH_SERVICE;

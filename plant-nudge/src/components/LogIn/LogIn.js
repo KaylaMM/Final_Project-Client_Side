@@ -38,16 +38,7 @@ class LogIn extends Component {
                         onChange={handleLoginInput}
                       />
                     </label>
-                    <label htmlFor="email">
-                      Email:
-                      <input
-                        id="email"
-                        name="email"
-                        type="email"
-                        // value={email}
-                        onChange={handleLoginInput}
-                      />
-                    </label>
+
                     <label htmlFor="password">
                       Password:
                       <input
@@ -58,7 +49,7 @@ class LogIn extends Component {
                         onChange={handleLoginInput}
                       />
                     </label>
-                    <button>Sign Up</button>
+                    <button>Log In</button>
                   </form>
                   {/* {message && <div>{message}</div>} */}
                 </>

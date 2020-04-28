@@ -34,7 +34,7 @@ class SignUp extends Component {
                         id="username"
                         name="username"
                         type="text"
-                        value={username}
+                        // value={username}
                         onChange={handleSignupInput}
                       />
                     </label>
@@ -54,7 +54,7 @@ class SignUp extends Component {
                         id="password"
                         name="password"
                         type="password"
-                        value={password}
+                        // value={password}
                         onChange={handleSignupInput}
                       />
                     </label>
