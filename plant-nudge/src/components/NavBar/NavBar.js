@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Typography from "@material-ui/core/Typography";
-import plantNudgeLogo from "../../Assets/plantNudgeLogo.png";
+import plantNudgeLogo from "../../Assets/PlantNudgeLogo.png";
+import { Redirect, Link } from "react-router-dom";
 
 import "./NavBar.css";
 
@@ -20,8 +21,12 @@ class NavBar extends React.Component {
   render() {
     const userNavButtons = this.state.userLoggedIn ? (
       <div className="toolbar_buttons">
-        <button className="home-button">Home</button>
-        <button className="logout-button">Log Out</button>
+        <a className="home-button">
+          <Link to="/user-profile">Home</Link>
+        </a>
+        <a className="logout-button">
+          <Link to="/">Log Out</Link>
+        </a>
       </div>
     ) : null;
 

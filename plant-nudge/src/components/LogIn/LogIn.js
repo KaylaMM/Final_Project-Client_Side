@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Redirect } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 import context, { AuthContext } from "../../context/index";
 
 import NavBar from "../NavBar/NavBar";
@@ -49,7 +49,9 @@ class LogIn extends Component {
                         onChange={handleLoginInput}
                       />
                     </label>
-                    <button>Log In</button>
+                    <a>
+                      <Link to="/user-profile">Log In</Link>
+                    </a>
                   </form>
                   {/* {message && <div>{message}</div>} */}
                 </>

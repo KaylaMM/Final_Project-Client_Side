@@ -12,10 +12,14 @@ class Home extends Component {
         <h1> Plant Nudge </h1>
         <h3> and app to help you remember when to water your urban oasis!</h3>
         <button>
-          <a> Log In </a>
+          <a>
+            <Link to="/login">Log In</Link>
+          </a>
         </button>
         <button>
-          <a> Sign Up </a>
+          <a>
+            <Link to="/signup">Sign Up</Link>
+          </a>
         </button>
       </div>
     );

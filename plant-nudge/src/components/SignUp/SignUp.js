@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Redirect } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 import context, { AuthContext } from "../../context/index";
 
 import NavBar from "../NavBar/NavBar";
@@ -58,7 +58,9 @@ class SignUp extends Component {
                         onChange={handleSignupInput}
                       />
                     </label>
-                    <button>Sign Up</button>
+                    <a>
+                      <Link to="/user-profile">Submit</Link>
+                    </a>
                   </form>
                   {/* {message && <div>{message}</div>} */}
                 </>
