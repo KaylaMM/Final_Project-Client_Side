@@ -49,6 +49,7 @@ class LogIn extends Component {
                         onChange={handleLoginInput}
                       />
                     </label>
+
                     <a>
                       <Link to="/user-profile">Log In</Link>
                     </a>

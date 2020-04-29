@@ -58,6 +58,29 @@ class SignUp extends Component {
                         onChange={handleSignupInput}
                       />
                     </label>
+                    <label htmlFor="phoneNumber">
+                      Phone Number:
+                      <input
+                        id="phoneNumber"
+                        name="phoneNumber"
+                        type="phoneNumber"
+                        // value={phoneNumber}
+                        //using submit instead of input becuase this is optional
+                        onChange={handleSignupSubmit}
+                      />
+                    </label>
+
+                    <label htmlFor="avatar">
+                      Profile Photo:
+                      <input
+                        id="avatar"
+                        name="avatar"
+                        type="avatar"
+                        // value={avatar}
+                        //using submit instead of input becuase this is optional
+                        onChange={handleSignupSubmit}
+                      />
+                    </label>
                     <a>
                       <Link to="/user-profile">Submit</Link>
                     </a>
