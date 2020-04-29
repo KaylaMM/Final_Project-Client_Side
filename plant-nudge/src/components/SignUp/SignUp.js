@@ -3,6 +3,7 @@ import { Redirect, Link } from "react-router-dom";
 import context, { AuthContext } from "../../context/index";
 
 import NavBar from "../NavBar/NavBar";
+import UploadedPic from "../UploadedPic/UploadedPic";
 
 import "./SignUp";
 
@@ -72,14 +73,7 @@ class SignUp extends Component {
 
                     <label htmlFor="avatar">
                       Profile Photo:
-                      <input
-                        id="avatar"
-                        name="avatar"
-                        type="avatar"
-                        // value={avatar}
-                        //using submit instead of input becuase this is optional
-                        onChange={handleSignupSubmit}
-                      />
+                      <UploadedPic />
                     </label>
                     <a>
                       <Link to="/user-profile">Submit</Link>
@@ -96,4 +90,6 @@ class SignUp extends Component {
   }
 }
 
+//Make sure there are no css issues with input tags inside of lables.
+//UploadedPic Component is now reuseable
 export default SignUp;
