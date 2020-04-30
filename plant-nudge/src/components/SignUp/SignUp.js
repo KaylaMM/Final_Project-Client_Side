@@ -26,7 +26,6 @@ class SignUp extends Component {
                 <Redirect to="/signup" />
               ) : (
                 <>
-                  <NavBar />
                   <h2>Sign Up</h2>
                   <form onSubmit={handleSignupInput}>
                     <label htmlFor="username">

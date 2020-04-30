@@ -25,7 +25,6 @@ class LogIn extends Component {
                 <Redirect to="/user-profile" />
               ) : (
                 <>
-                  <NavBar />
                   <h2>Log In</h2>
                   <form onSubmit={handleLoginInput}>
                     <label htmlFor="username">
