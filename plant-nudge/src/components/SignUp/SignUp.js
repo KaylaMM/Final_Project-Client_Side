@@ -2,10 +2,9 @@ import React, { Component } from "react";
 import { Redirect, Link } from "react-router-dom";
 import context, { AuthContext } from "../../context/index";
 
-import NavBar from "../NavBar/NavBar";
 import UploadedPic from "../UploadedPic/UploadedPic";
 
-import "./SignUp";
+import "./SignUp.css";
 
 class SignUp extends Component {
   render() {
@@ -25,61 +24,68 @@ class SignUp extends Component {
               {isLoggedIn ? (
                 <Redirect to="/signup" />
               ) : (
-                <>
-                  <h2>Sign Up</h2>
-                  <form onSubmit={handleSignupInput}>
-                    <label htmlFor="username">
-                      Username:
-                      <input
-                        id="username"
-                        name="username"
-                        type="text"
-                        // value={username}
-                        onChange={handleSignupInput}
-                      />
-                    </label>
-                    <label htmlFor="email">
-                      Email:
-                      <input
-                        id="email"
-                        name="email"
-                        type="email"
-                        // value={email}
-                        onChange={handleSignupInput}
-                      />
-                    </label>
-                    <label htmlFor="password">
-                      Password:
-                      <input
-                        id="password"
-                        name="password"
-                        type="password"
-                        // value={password}
-                        onChange={handleSignupInput}
-                      />
-                    </label>
-                    <label htmlFor="phoneNumber">
-                      Phone Number:
-                      <input
-                        id="phoneNumber"
-                        name="phoneNumber"
-                        type="phoneNumber"
-                        // value={phoneNumber}
-                        //using submit instead of input becuase this is optional
-                        onChange={handleSignupSubmit}
-                      />
-                    </label>
+                <div id="signup-page">
+                  <div id="signup-box">
+                    <div class="left">
+                      <h1>Sign Up</h1>
+                      <form onSubmit={handleSignupInput}>
+                        <label htmlFor="username">
+                          Username:
+                          <input
+                            id="username"
+                            name="username"
+                            type="text"
+                            value={username}
+                            onChange={handleSignupInput}
+                          />
+                        </label>
+                        <label htmlFor="email">
+                          Email:
+                          <input
+                            id="email"
+                            name="email"
+                            type="email"
+                            // value={email}
+                            onChange={handleSignupInput}
+                          />
+                        </label>
+                        <label htmlFor="password">
+                          Password:
+                          <input
+                            id="password"
+                            name="password"
+                            type="password"
+                            value={password}
+                            onChange={handleSignupInput}
+                          />
+                        </label>
+                        <label htmlFor="phoneNumber">
+                          Phone Number:
+                          <input
+                            id="phoneNumber"
+                            name="phoneNumber"
+                            type="phoneNumber"
+                            // value={phoneNumber}
+                            //using submit instead of input becuase this is optional
+                            onChange={handleSignupSubmit}
+                          />
+                        </label>
 
-                    <label htmlFor="avatar">
-                      Profile Photo:
-                      <UploadedPic />
-                    </label>
-                    <a>
-                      <Link to="/user-profile">Submit</Link>
-                    </a>
-                  </form>
-                  {/* {message && <div>{message}</div>} */}
-                </>
+                        <label htmlFor="avatar">
+                          Profile Photo:
+                          <UploadedPic />
+                        </label>
+                        <a>
+                          <Link to="/user-profile">Submit</Link>
+                        </a>
+                      </form>
+                      <div class="right">
+                        {/* <img src={require("../../Assets/SignUpPic.jpg")} /> */}
+                      </div>
+                      {/* {message && <div>{message}</div>} */}
+                    </div>
+                  </div>
+                </div>
               )}
             </>
           );

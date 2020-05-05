@@ -1,0 +1,6 @@
+.createPlant {
+    display: flex;
+    flex-direction: column;
+    flex-grow: inherit;
+    justify-content: space-between;
+}

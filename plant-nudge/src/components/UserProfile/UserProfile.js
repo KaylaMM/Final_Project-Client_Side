@@ -7,7 +7,7 @@ import NewPlant from "../NewPlant/NewPlant";
 class UserProfile extends Component {
   render() {
     return (
-      <div>
+      <div className="user-profile">
         {/* <NavBar /> */}
         <NewPlant />
       </div>
