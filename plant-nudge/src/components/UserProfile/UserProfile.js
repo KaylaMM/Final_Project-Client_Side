@@ -1,14 +1,15 @@
 import React, { Component } from "react";
-import Typography from "@material-ui/core/Typography";
 
 import "./UserProfile.css";
 import NavBar from "../NavBar/NavBar";
+import NewPlant from "../NewPlant/NewPlant";
 
 class UserProfile extends Component {
   render() {
     return (
       <div>
-        <NavBar />
+        {/* <NavBar /> */}
+        <NewPlant />
       </div>
     );
   }

@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import { Redirect, Link } from "react-router-dom";
+//might be able to remove the var context
 import context, { AuthContext } from "../../context/index";
-
-import NavBar from "../NavBar/NavBar";
 
 import "./LogIn.css";
 
@@ -13,6 +12,7 @@ class LogIn extends Component {
         {(context) => {
           const {
             formLogin: { username, password },
+            //not sure if these messages are needed
             errorMessage,
             successMessage,
             isLoggedIn,
@@ -26,7 +26,7 @@ class LogIn extends Component {
               ) : (
                 <>
                   <h2>Log In</h2>
-                  <form onSubmit={handleLoginInput}>
+                  <form onSubmit={handleLoginSubmit}>
                     <label htmlFor="username">
                       Username:
                       <input
