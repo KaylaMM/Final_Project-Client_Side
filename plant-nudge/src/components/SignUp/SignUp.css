@@ -20,7 +20,7 @@ body {
     background-image: url(../../Assets/SignUpPic.jpg);
     background-size: 100%;
     background-position: right -50px bottom -100px;
-    box-shadow: 0 30px 30px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 30px 30px rgba(216, 197, 190, 11.4);
     margin-top: 10em;
 
 }
@@ -127,7 +127,7 @@ button {
     top: 15px;
     padding: 5px;
     border-radius: 5px;
-    box-shadow: 0 1px 1px rgba(98, 79, 81, 0.4);
+    box-shadow: 0 30px 30px rgba(216, 197, 190, 0.4);
 }
 
 .link {
@@ -137,68 +137,3 @@ button {
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
 }
-
-
-
-/* input[type="text"]:focus,
-input[type="password"]:focus {
-    border-bottom: 2px solid #16a085;
-    color: #16a085;
-    transition: 0.2s ease;
-}
-
-input[type="submit"]:focus,
-input[type="phoneNumber"] {
-    margin-top: 28px;
-    width: 120px;
-    height: 32px;
-    background: #16a085;
-    border: none;
-    border-radius: 2px;
-    color: #FFF;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 500;
-    text-transform: uppercase;
-    transition: 0.1s ease;
-    cursor: pointer;
-} */
-
-/* input[type="submit"]:hover,
-input[type="submit"]:focus {
-    opacity: 0.8;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-    transition: 0.1s ease;
-} */
-
-/* input[type="submit"]:active {
-    opacity: 1;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
-    transition: 0.1s ease;
-} */
-
-
-/* img {
-    position: absolute;
-    top: 0;
-    right: 0;
-    box-sizing: border-box;
-    padding: 40px;
-    width: 300px;
-    height: 400px;
-    background: url('https://goo.gl/YbktSj');
-    background-size: cover;
-    background-position: center;
-    border-radius: 0 2px 2px 0;
-}
-*/
-
-/* 
-img {
-    position: relative;
-    margin: 5% auto;
-    width: 600px;
-    height: 400px;
-    background: #FFF;
-    border-radius: 2px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-} */

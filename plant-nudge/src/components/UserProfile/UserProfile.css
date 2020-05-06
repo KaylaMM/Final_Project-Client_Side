@@ -1,6 +1,8 @@
-.user-profile {
-    display: flex;
-    flex-direction: column;
-    flex-grow: inherit;
-    justify-content: space-between;
+.new-plant {
+    position: relative;
+    margin: 6%;
+    width: 400px;
+    height: 500px;
+    background: #FFF;
+    border-radius: 2px;
 }

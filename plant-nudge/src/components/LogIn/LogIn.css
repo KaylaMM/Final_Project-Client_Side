@@ -1,0 +1,74 @@
+.login-page {
+    /* background-image: url("../../Assets/LogIn.jpg"); */
+
+
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.login-image {
+    background-image: url("../../Assets/LogIn.jpg");
+    position: static;
+    margin-top: 20px;
+    margin-right: 200px;
+    height: 95vh;
+    width: 50vw;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 10px 10px 8px rgba(216, 197, 190, 2.4)
+}
+
+#login-container {
+    padding-top: 0px;
+    margin-top: -20px;
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(216, 197, 190, 0.6);
+    box-shadow: 10px 10px 8px rgba(216, 197, 190, 2.4);
+    height: 57vh;
+    width: 50vw;
+    margin-top: 177px;
+    padding-right: 225px;
+    border-radius: 4px;
+
+}
+
+.login-box {
+    position: center;
+    margin: 50px 50px 100px 50px;
+    width: 300px;
+    height: 350px;
+    background: #FFF;
+    border-radius: 4px;
+}
+
+h1 {
+    margin: 0 0 20px 0;
+    font-weight: 300;
+    font-size: 28px;
+}
+
+.login-text {
+    padding-left: 25px;
+    padding-top: 50px;
+}
+
+button {
+    background-color: #fef5ef;
+    width: 80px;
+    height: 30px;
+    position: relative;
+    top: 15px;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 0 30px 30px rgba(216, 197, 190, 0.4);
+}
+
+.link {
+    text-decoration: none;
+    font-size: 16px;
+    color: #222;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}

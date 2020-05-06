@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import axios from "axios";
-import "./NewPlant.css";
+import { Redirect, Link } from "react-router-dom";
 import Calendar from "react-calendar";
+
+import "./NewPlant.css";
 
 class NewPlant extends Component {
   constructor(props) {
@@ -122,10 +124,10 @@ class NewPlant extends Component {
               </legend>
               <input type="file" onChange={this.updateFileInState} />
             </div>
+            <button>
+              <Link to="/progress-album">Progress Album</Link>
+            </button>
           </div>
-        </div>
-        <div>
-          <button className="">Progress Album</button>
         </div>
       </>
     );

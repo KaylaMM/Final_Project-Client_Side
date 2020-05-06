@@ -16,11 +16,15 @@ class Home extends Component {
               {" "}
               an app to help you remember when to water your urban oasis!
             </h3>
-            <button className="link">
-              <Link to="/login">Log In</Link>
+            <button className="button">
+              <Link className="link" to="/login">
+                Log In
+              </Link>
             </button>
-            <button className="link">
-              <Link to="/signup">Sign Up</Link>
+            <button className="button">
+              <Link className="link" to="/signup">
+                Sign Up
+              </Link>
             </button>
           </div>
         </div>

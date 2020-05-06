@@ -24,37 +24,46 @@ class LogIn extends Component {
               {isLoggedIn ? (
                 <Redirect to="/user-profile" />
               ) : (
-                <>
-                  <h2>Log In</h2>
-                  <form onSubmit={handleLoginSubmit}>
-                    <label htmlFor="username">
-                      Username:
-                      <input
-                        id="username"
-                        name="username"
-                        type="text"
-                        value={username}
-                        onChange={handleLoginInput}
-                      />
-                    </label>
+                <div className="login-page">
+                  <img className="login-image" />
+                  <div id="login-container">
+                    <div className="login-box">
+                      <div className="login-text">
+                        <h1>Log In</h1>
+                        <form onSubmit={handleLoginSubmit}>
+                          <label htmlFor="username">
+                            Username:
+                            <input
+                              id="username"
+                              name="username"
+                              type="text"
+                              // value={username}
+                              onChange={handleLoginInput}
+                            />
+                          </label>
 
-                    <label htmlFor="password">
-                      Password:
-                      <input
-                        id="password"
-                        name="password"
-                        type="password"
-                        value={password}
-                        onChange={handleLoginInput}
-                      />
-                    </label>
+                          <label htmlFor="password">
+                            Password:
+                            <input
+                              id="password"
+                              name="password"
+                              type="password"
+                              // value={password}
+                              onChange={handleLoginInput}
+                            />
+                          </label>
 
-                    <a>
-                      <Link to="/user-profile">Log In</Link>
-                    </a>
-                  </form>
-                  {/* {message && <div>{message}</div>} */}
-                </>
+                          <button>
+                            <Link className="link" to="/user-profile">
+                              Log In
+                            </Link>
+                          </button>
+                        </form>
+                      </div>
+                    </div>
+                    {/* {message && <div>{message}</div>} */}
+                  </div>
+                </div>
               )}
             </>
           );
