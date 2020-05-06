@@ -46,6 +46,7 @@ h1 {
 
 
 button {
+    margin-right: 15px;
     background-color: #fef5ef;
     width: 80px;
     height: 30px;
@@ -53,10 +54,9 @@ button {
     top: 15px;
     padding: 5px;
     border-radius: 5px;
-    box-shadow: 0 1px 1px rgba(98, 79, 81, 0.4);
 }
 
-button .link {
+.link {
     text-decoration: none;
     font-size: 16px;
     color: #222;

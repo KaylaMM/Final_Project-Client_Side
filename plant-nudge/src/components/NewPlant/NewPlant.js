@@ -118,7 +118,7 @@ class NewPlant extends Component {
           <div className="">
             <div className="">
               <legend className="addImage" style={{ marginTop: "20px" }}>
-                Add a Picture
+                <i>Add a Picture</i>
               </legend>
               <input type="file" onChange={this.updateFileInState} />
             </div>
