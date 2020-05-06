@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Typography from "@material-ui/core/Typography";
-import plantNudgeLogo from "../../Assets/PlantNudgeLogo.png";
+import plantNudgeLogo from "../../Assets/PlantNudgeLogo.jpg";
 import { Redirect, Link } from "react-router-dom";
 
 import "./NavBar.css";

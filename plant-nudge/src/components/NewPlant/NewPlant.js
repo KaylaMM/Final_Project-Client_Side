@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import "./NewPlant.css";
-import { ThemeProvider } from "@material-ui/core";
+import Calendar from "react-calendar";
 
 class NewPlant extends Component {
   constructor(props) {
@@ -106,6 +106,13 @@ class NewPlant extends Component {
               onChange={(e) => this.handleChange(e)}
               required
             />
+          </div>
+
+          <div className="">
+            <i id="" className="">
+              Next Watering
+            </i>
+            {/* <Calendar /> */}
           </div>
 
           <div className="">

@@ -2,6 +2,7 @@
 
 *:focus {
     outline: none;
+    font-family: 'Roboto', sans-serif;
 }
 
 body {
@@ -34,8 +35,9 @@ body {
 
 }
 
-
-
+h1 {
+    font-family: 'Roboto', sans-serif;
+}
 
 .left {
     position: absolute;
@@ -54,6 +56,38 @@ h1 {
 }
 
 input[type="text"],
+input[type="username"] {
+    display: block;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    padding: 4px;
+    width: 220px;
+    height: 32px;
+    border: none;
+    border-bottom: 1px solid #AAA;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    transition: 0.2s ease;
+}
+
+input[type="text"],
+input[type="email"] {
+    display: block;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    padding: 4px;
+    width: 220px;
+    height: 32px;
+    border: none;
+    border-bottom: 1px solid #AAA;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    transition: 0.2s ease;
+}
+
+input[type="text"],
 input[type="password"] {
     display: block;
     box-sizing: border-box;
@@ -69,14 +103,52 @@ input[type="password"] {
     transition: 0.2s ease;
 }
 
-input[type="text"]:focus,
+input[type="text"],
+input[type="phoneNumber"] {
+    display: block;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    padding: 4px;
+    width: 220px;
+    height: 32px;
+    border: none;
+    border-bottom: 1px solid #AAA;
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 15px;
+    transition: 0.2s ease;
+}
+
+button {
+    background-color: #fef5ef;
+    width: 80px;
+    height: 30px;
+    position: relative;
+    top: 15px;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 0 1px 1px rgba(98, 79, 81, 0.4);
+}
+
+.link {
+    text-decoration: none;
+    font-size: 16px;
+    color: #222;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+
+
+
+/* input[type="text"]:focus,
 input[type="password"]:focus {
     border-bottom: 2px solid #16a085;
     color: #16a085;
     transition: 0.2s ease;
 }
 
-input[type="submit"] {
+input[type="submit"]:focus,
+input[type="phoneNumber"] {
     margin-top: 28px;
     width: 120px;
     height: 32px;
@@ -89,20 +161,20 @@ input[type="submit"] {
     text-transform: uppercase;
     transition: 0.1s ease;
     cursor: pointer;
-}
+} */
 
-input[type="submit"]:hover,
+/* input[type="submit"]:hover,
 input[type="submit"]:focus {
     opacity: 0.8;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
     transition: 0.1s ease;
-}
+} */
 
-input[type="submit"]:active {
+/* input[type="submit"]:active {
     opacity: 1;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
     transition: 0.1s ease;
-}
+} */
 
 
 /* img {
@@ -120,7 +192,7 @@ input[type="submit"]:active {
 }
 */
 
-
+/* 
 img {
     position: relative;
     margin: 5% auto;
@@ -129,4 +201,4 @@ img {
     background: #FFF;
     border-radius: 2px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-}
+} */

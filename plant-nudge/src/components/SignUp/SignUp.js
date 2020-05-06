@@ -35,7 +35,7 @@ class SignUp extends Component {
                             id="username"
                             name="username"
                             type="text"
-                            value={username}
+                            // value={username}
                             onChange={handleSignupInput}
                           />
                         </label>
@@ -55,7 +55,7 @@ class SignUp extends Component {
                             id="password"
                             name="password"
                             type="password"
-                            value={password}
+                            // value={password}
                             onChange={handleSignupInput}
                           />
                         </label>
@@ -75,9 +75,11 @@ class SignUp extends Component {
                           Profile Photo:
                           <UploadedPic />
                         </label>
-                        <a>
-                          <Link to="/user-profile">Submit</Link>
-                        </a>
+                        <button>
+                          <Link className="link" to="/user-profile">
+                            Submit
+                          </Link>
+                        </button>
                       </form>
                       <div class="right">
                         {/* <img src={require("../../Assets/SignUpPic.jpg")} /> */}

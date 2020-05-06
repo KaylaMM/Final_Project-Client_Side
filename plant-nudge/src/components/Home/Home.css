@@ -1,0 +1,65 @@
+.landing-page {
+    background-image: url(../../Assets/WelcomePage.jpg);
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-decoration: none;
+    font-size: 16px;
+    color: #222;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+
+img {
+    height: 200;
+    width: 200px;
+    display: inline-block;
+    margin: -285px 40px;
+    margin-top: 303px;
+    opacity: 100%;
+    border-radius: 8px;
+    box-shadow: 10px 10px 8px rgba(216, 197, 190);
+}
+
+.welcome-container {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(216, 197, 190, 0.6);
+    height: 300px;
+    width: 1500px;
+    margin-top: 30px;
+    text-align: left;
+
+}
+
+.welcome-text {
+    padding-top: 3.5vh;
+    padding-left: 20vw;
+    font-size: 20px;
+    color: #ba988b;
+}
+
+h1 {
+    font-family: Raleway;
+}
+
+
+button {
+    background-color: #fef5ef;
+    width: 80px;
+    height: 30px;
+    position: relative;
+    top: 15px;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 0 1px 1px rgba(98, 79, 81, 0.4);
+}
+
+button .link {
+    text-decoration: none;
+    font-size: 16px;
+    color: #222;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}

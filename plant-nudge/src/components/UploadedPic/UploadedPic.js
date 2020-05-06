@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./UploadedPic.css";
 
 class UploadedPic extends Component {
   constructor(props) {
@@ -31,13 +32,14 @@ class UploadedPic extends Component {
       <form onSubmit={this.handleUploadImage}>
         <div>
           <input
+            className="choose-avatar"
             ref={(ref) => {
               this.uploadInput = ref;
             }}
             type="file"
           />
         </div>
-        <div>
+        {/* \<div>
           <input
             ref={(ref) => {
               this.fileName = ref;
@@ -45,12 +47,12 @@ class UploadedPic extends Component {
             type="text"
             placeholder="Enter the desired name of file"
           />
-        </div>
-        <br />
+        </div> */}
+        {/* <br />
         <div>
           <button>Upload</button>
-        </div>
-        <img src={this.state.imageURL} alt="img" />
+        </div> */}
+        {/* <img src={this.state.imageURL} alt="img" /> */}
       </form>
     );
   }
