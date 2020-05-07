@@ -7,6 +7,8 @@ const service = axios.create({
   withCredentials: true,
 });
 
+//this is where auth checks in with the back end to
+
 const AUTH_SERVICE = {
   signup(userData) {
     return service.post("/signup", userData);

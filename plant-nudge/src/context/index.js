@@ -96,6 +96,50 @@ class AuthProvider extends React.Component {
       });
   };
 
+  handleLoginInput = (e) => {
+    const {
+      target: { name, value },
+    } = e;
+
+    this.setState((prevState) => ({
+      ...prevState,
+      formLogin: {
+        ...prevState.formLogin,
+        [name]: value,
+      },
+    }));
+  };
+
+  handleLoginSubmit = (e) => {
+    e.preventDefault();
+    AUTH_SERVICE.login(this.state.formLogin)
+      .then((responseFromServer) => {
+        const {
+          data: { user, message },
+        } = responseFromServer;
+
+        this.setState((prevState) => ({
+          ...prevState,
+          formLogin: {
+            username: "",
+            password: "",
+          },
+          currentUser: user,
+          isLoggedIn: true,
+        }));
+        console.log(`${message}`);
+        this.props.history.push("/user-profile");
+      })
+      .catch((err) => {
+        if (err.response && err.response.data) {
+          this.setState((prevState) => ({
+            ...prevState,
+            message: err.response.data.message,
+          }));
+        }
+      });
+  };
+
   handleLogout = () => {
     AUTH_SERVICE.logout()
       .then(() => {
@@ -110,7 +154,14 @@ class AuthProvider extends React.Component {
   };
 
   render() {
-    const { state, handleSignupInput, handleSignupSubmit, handleLogout } = this;
+    const {
+      state,
+      handleSignupInput,
+      handleSignupSubmit,
+      handleLoginInput,
+      handleLoginSubmit,
+      handleLogout,
+    } = this;
     return (
       <>
         <AuthContext.Provider
@@ -118,6 +169,8 @@ class AuthProvider extends React.Component {
             state,
             handleSignupInput,
             handleSignupSubmit,
+            handleLoginInput,
+            handleLoginSubmit,
             handleLogout,
           }}
         >
