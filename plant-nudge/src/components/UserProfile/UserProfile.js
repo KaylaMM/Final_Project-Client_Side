@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import "./UserProfile.css";
 import NavBar from "../NavBar/NavBar";
 import NewPlant from "../NewPlant/NewPlant";
+import PlantToggle from "../PlantToggle/PlantToggle";
 import UploadedPic from "../UploadedPic/UploadedPic";
 import context, { AuthContext } from "../../context";
 import "./UserProfile.css";
@@ -10,31 +11,64 @@ import "./UserProfile.css";
 // make api request to see if user has Avatar, if yes show in href to show it. if not, display default
 
 class UserProfile extends Component {
-  // componentDidMount() {
-  //   console.log(this.context, "-=-=-=-=-=-=-=-=-=-=-=");
-  //   if (!this.context.state.isLoggedIn) {
-  //     return this.props.history.push("/signup");
-  //   }
-  //   this.props.updateState();
-  // }
+  state = {
+    isNewPlantFormVisable: false,
+  };
+
+  updatePlant = (key) => {};
+
+  togglePlantFormOn = () => {
+    this.setState((prevState) => ({
+      ...prevState,
+      isNewPlantFormVisable: true,
+    }));
+  };
+
+  togglePlantFormOff = () => {
+    this.setState((prevState) => ({
+      ...prevState,
+      isNewPlantFormVisable: false,
+    }));
+  };
+
   render() {
     return (
       <AuthContext.Consumer>
         {(context) => {
-          const { username } = context.state.currentUser;
-          const { avatar } = this.props;
+          const { currentUser, isLoggedIn } = context.state;
           return (
-            <div className="user-profile">
-              <NavBar />
-              <header>
-                <h1> Welcome {username} </h1>
-              </header>
-              <div>
-                <image> {this.props.avatar} </image>
-              </div>
-
-              <NewPlant className="new-plant" />
-            </div>
+            <>
+              {!isLoggedIn ? (
+                <Redirect to="/login" />
+              ) : (
+                <div className="user-profile">
+                  <NavBar />
+                  <div>
+                    <PlantToggle
+                      userLoggedIn={currentUser}
+                      passedDownTogglePlantForm={() => this.togglePlantFormOn()}
+                      passedDownUpdatePlantSelector={(key) =>
+                        this.updatePlant(key)
+                      }
+                    />
+                    <div className="new-plant-card">
+                      {this.state.isNewPlantFormVisable ? (
+                        <NewPlant isDone={this.togglePlantFormOff} />
+                      ) : (
+                        <>
+                          <button
+                            id="add-another-plant"
+                            onClick={() => this.togglePlantFormOn}
+                          >
+                            <span> Add New Plant </span>
+                          </button>
+                        </>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              )}
+            </>
           );
         }}
       </AuthContext.Consumer>

@@ -22,7 +22,7 @@ class SignUp extends Component {
           return (
             <>
               {isLoggedIn ? (
-                <Redirect to="/signup" />
+                <Redirect to="/user-profile" />
               ) : (
                 <div id="signup-page">
                   <div id="signup-box">

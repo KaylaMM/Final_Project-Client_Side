@@ -1,43 +1,98 @@
 import React, { Component } from "react";
 import { Route, Switch, BrowserRouter } from "react-router-dom";
+import { AuthContext } from "./context";
+import NEW_PLANT_SERVICE from "./services/PlantsService";
+import PROGRESS_ALBUM_SERVICE from "./services/ProgressAlbumService";
 import "./App.css";
-// import AllUserPlants from "./components/AllUserPlants/AllUserPlants";
-// import Calendar from "./components/Calendar/Calendar";
+
+import Calendar from "./components/Calendar/Calendar";
 import Home from "./components/Home/Home";
 import LogIn from "./components/LogIn/LogIn";
-// import NavBar from "./components/NavBar/NavBar";
-// import NewPlant from "./components/NewPlant/NewPlant";
-// import ProgressAlbum from "./components/ProgressAlbum/ProgressAlbum";
+import NavBar from "./components/NavBar/NavBar";
+import NewPlant from "./components/NewPlant/NewPlant";
+import ProgressAlbum from "./components/ProgressAlbum/ProgressAlbum";
 import SignUp from "./components/SignUp/SignUp";
-// import UploadedPic from "./components/UploadedPic/UploadedPic";
-// import UserProfile from "./components/UserProfile/UserProfile";
-// import { AuthContext } from "./context";
+import UploadedPic from "./components/UploadedPic/UploadedPic";
+import UserProfile from "./components/UserProfile/UserProfile";
 
-// import { AuthContext } from "./context/index";
 function App() {
+  let context = React.useContext(AuthContext);
+
+  React.useEffect(() => {
+    context.isUserLoggedIn();
+  }, []);
+
   return (
     <div>
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/login" component={LogIn} />
         <Route exact path="/signup" component={SignUp} />
-        <Route exact path="/user-profile" />
-
-        {/* render={(props) => (<UserProfile
-          {...props}
-          userPlants={this.state.userPlants}
-          allUserPlantsFromDB={this.state.allProgressPhotosFromDB}
-          progressPhotos={this.state.progressPhotos}
-          allProgressPhotosFromDB={this.progress.allProgressPhotosFromDB}
-              /> */}
-        {/* )} component={UserProfile}  */}
-        <Route exacr path="/progress-album" />
-        {/* component={ProgressAlbum} */}
+        <Route exact path="/user-profile" component={UserProfile} />
+        <Route exact path="/progress-album" component={ProgressAlbum} />
       </Switch>
     </div>
   );
 }
+
 export default App;
+
+//Ashraf Template
+// export class App extends Component {
+//   componentDidMount() {
+//     this.context.updateState({ message: "Checking authentication" });
+//   }
+
+//   render() {
+//     const { user, message, loggedIn } = this.context.state;
+//     const { isUserLoggedIn, handleLogout } = this.context;
+//     return (
+//       <div>
+//         <Switch>
+//           {loggedIn ? (
+//             <UserProfile
+//               user={user}
+//               isUserLoggedIn={isUserLoggedIn}
+//               handleLogout={handleLogout}
+//             />
+//           ) : (
+//             <Route exact path="/login" component={LogIn} />
+//           )}
+//           <Route exact path="/" component={Home} />
+//           <Route exact path="/signup" component={SignUp} />
+//           <Route exact path="/user-profile" component={UserProfile} />
+//           <Route exact path="/progress-album" component={ProgressAlbum} />
+//         </Switch>
+//       </div>
+//     );
+//   }
+// }
+
+// App.contextType = AuthContext;
+// export default App;
+
+//=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+//Kevin Template
+
+// function App() {
+//   return (
+//     <div>
+//       <Switch>
+
+//         {/* render={(props) => (<UserProfile
+//           {...props}
+//           userPlants={this.state.userPlants}
+//           allUserPlantsFromDB={this.state.allProgressPhotosFromDB}
+//           progressPhotos={this.state.progressPhotos}
+//           allProgressPhotosFromDB={this.progress.allProgressPhotosFromDB}
+//               /> */}
+//         {/* )} component={UserProfile}  */}
+//         {/* component={ProgressAlbum} */}
+//       </Switch>
+//     </div>
+//   );
+// }
+// export default App;
 // state = {
 //   //newPlant: [],
 //   userPlants: [],
