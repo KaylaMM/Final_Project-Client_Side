@@ -12,7 +12,7 @@ class SignUp extends Component {
       <AuthContext.Consumer>
         {(context) => {
           const {
-            formLogin: { username, password },
+            formSignup: { username, password, email, phoneNumber },
             errorMessage,
             successMessage,
             isLoggedIn,
@@ -28,14 +28,20 @@ class SignUp extends Component {
                   <div id="signup-box">
                     <div class="left">
                       <h1>Sign Up</h1>
-                      <form onSubmit={handleSignupInput}>
+                      <form
+                        onSubmit={async (e) => {
+                          e.preventDefault();
+                          await handleSignupInput(e);
+                          this.props.history.push("/user-profile");
+                        }}
+                      >
                         <label htmlFor="username">
                           Username:
                           <input
                             id="username"
                             name="username"
-                            type="text"
-                            // value={username}
+                            type="username"
+                            value={username}
                             onChange={handleSignupInput}
                           />
                         </label>
@@ -45,7 +51,7 @@ class SignUp extends Component {
                             id="email"
                             name="email"
                             type="email"
-                            // value={email}
+                            value={email}
                             onChange={handleSignupInput}
                           />
                         </label>
@@ -55,7 +61,7 @@ class SignUp extends Component {
                             id="password"
                             name="password"
                             type="password"
-                            // value={password}
+                            value={password}
                             onChange={handleSignupInput}
                           />
                         </label>
@@ -65,21 +71,17 @@ class SignUp extends Component {
                             id="phoneNumber"
                             name="phoneNumber"
                             type="phoneNumber"
-                            // value={phoneNumber}
+                            value={phoneNumber}
                             //using submit instead of input becuase this is optional
-                            onChange={handleSignupSubmit}
+                            onChange={handleSignupInput}
                           />
                         </label>
 
-                        <label htmlFor="avatar">
+                        {/* <label htmlFor="avatar">
                           Profile Photo:
                           <UploadedPic />
-                        </label>
-                        <button>
-                          <Link className="link" to="/user-profile">
-                            Submit
-                          </Link>
-                        </button>
+                        </label> */}
+                        <button type="submit">Submit</button>
                       </form>
                       <div class="right">
                         {/* <img src={require("../../Assets/SignUpPic.jpg")} /> */}

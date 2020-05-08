@@ -17,9 +17,10 @@ import UserProfile from "./components/UserProfile/UserProfile";
 
 function App() {
   let context = React.useContext(AuthContext);
-
+  console.log("context", context);
   React.useEffect(() => {
     context.isUserLoggedIn();
+    console.log("context", context);
   }, []);
 
   return (

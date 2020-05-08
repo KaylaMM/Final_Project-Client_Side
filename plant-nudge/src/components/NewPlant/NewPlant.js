@@ -18,7 +18,7 @@ class NewPlant extends Component {
   state = {
     ...DEFAULT_STATE,
     errorMessage: "",
-    succeMessage: "",
+    successMessage: "",
   };
 
   toggleFormOff = (event) => {
