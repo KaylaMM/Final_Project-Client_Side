@@ -1,22 +1,20 @@
 .login-page {
-    /* background-image: url("../../Assets/LogIn.jpg"); */
 
-
+    overflow: hidden;
     display: flex;
     justify-content: space-evenly;
 }
 
 .login-image {
-    background-image: url("../../Assets/LogIn.jpg");
-    position: static;
     margin-top: 20px;
     margin-right: 200px;
+    margin-left: 41px;
     height: 95vh;
-    width: 50vw;
+    width: 38%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    box-shadow: 10px 10px 8px rgba(216, 197, 190, 2.4)
+    box-shadow: 10px 10px 8px rgba(216, 197, 190, 1);
 }
 
 #login-container {

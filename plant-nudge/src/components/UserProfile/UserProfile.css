@@ -9,8 +9,8 @@
 
 
 .ironplanter {
-    background-image: url("../../Assets/UserProfilePic.jpg");
-    height: 390px;
+    /* background-image: url("../../Assets/UserProfilePic.jpg"); */
+    height: 525px;
     width: 400px;
     display: inline-block;
     margin: -370px 40px;
@@ -18,6 +18,10 @@
     opacity: 100%;
     border-radius: 8px;
     box-shadow: 10px 10px 8px rgba(216, 197, 190);
+}
+
+.all-plants-header {
+    padding-top: 70px;
 }
 
 .plant.toggle {

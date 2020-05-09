@@ -13,7 +13,11 @@ class PlantCard extends Component {
           const { currentUser, isLoggedIn } = context.state;
           return (
             <div className="plant-card">
-              <img className="user-plant-image" alt="user-plant-image" />
+              <img
+                className="user-plant-image"
+                src={require("../../Assets/Pathos.jpg")}
+                alt="user-plant-image"
+              />
               <ul className="plant-info">
                 <li>Pathos</li>
                 <li>Living Room</li>

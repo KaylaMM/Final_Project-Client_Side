@@ -4,6 +4,7 @@ import { Redirect, Link } from "react-router-dom";
 import { AuthContext } from "../../context/index";
 
 import "./LogIn.css";
+import { requirePropFactory } from "@material-ui/core";
 
 class LogIn extends Component {
   render() {
@@ -24,7 +25,11 @@ class LogIn extends Component {
                 <Redirect to="/user-profile" />
               ) : (
                 <div className="login-page">
-                  <img className="login-image" alt="page-styling" />
+                  <img
+                    className="login-image"
+                    src={require("../../Assets/LogIn.jpg")}
+                    alt="page-styling"
+                  />
                   <div id="login-container">
                     <div className="login-box">
                       <div className="login-text">

@@ -87,6 +87,7 @@ class NewPlant extends Component {
             <div className="createPlant">
               <div>
                 <form
+                  className="new-plant-form"
                   onSubmit={(e) =>
                     this.handleNewPlantSubmit(e, currentUser, syncUser)
                   }

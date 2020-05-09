@@ -1,16 +1,16 @@
 .plant-card {
     position: relative;
-    margin: 6%;
+    margin: 2%;
     width: 400px;
-    height: 500px;
+    height: 650px;
     background: #FFF;
-    border-radius: 2px;
+    border-radius: 10px;
+    z-index: -1;
 
 }
 
-img {
-    background-image: url(../../Assets/Pathos.jpg);
-    height: 200px;
+.user-plant-image {
+    height: 343px;
     width: 300px;
     display: inline-block;
     margin-left: 49px;
@@ -22,12 +22,6 @@ img {
 }
 
 .plant-info {
-    display: block;
-    margin-bottom: 15px;
-    padding: 46px;
-    margin-left: 30px;
-    width: 257px;
-    height: 32px;
     border: none;
     font-family: 'Roboto', sans-serif;
     font-weight: 0;

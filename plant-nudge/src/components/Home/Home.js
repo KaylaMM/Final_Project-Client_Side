@@ -16,12 +16,12 @@ class Home extends Component {
                 <Redirect to="/user-profile" />
               ) : (
                 <div className="landing-page">
-                  <img
-                    alt="logo"
-                    id="logo"
-                    src={require("../../Assets/PlantNudgeLogo.jpg")}
-                  />
                   <div className="welcome-container">
+                    <img
+                      alt="logo"
+                      id="landing-logo"
+                      src={require("../../Assets/PlantNudgeLogo.jpg")}
+                    />
                     <div className="welcome-text">
                       <h3> Welcome to </h3>
                       <h1> Plant Nudge </h1>
