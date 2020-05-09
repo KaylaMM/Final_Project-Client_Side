@@ -97,7 +97,7 @@ class NewPlant extends Component {
                       type="text"
                       className="validate"
                       name="newPlantType"
-                      value={newPlantType}
+                      value={this.state.newPlantType}
                       onChange={this.handleNewPlantInput}
                       required
                     />
@@ -112,7 +112,7 @@ class NewPlant extends Component {
                       type="text"
                       className="validate"
                       name="newLocation"
-                      value={newLocation}
+                      value={this.state.newLocation}
                       onChange={this.handleNewPlantInput}
                       required
                     />
@@ -127,7 +127,7 @@ class NewPlant extends Component {
                       type="text"
                       className="validate"
                       name="newAmountOfWaterNeeded"
-                      value={newAmountOfWaterNeeded}
+                      value={this.state.newAmountOfWaterNeeded}
                       onChange={this.handleNewPlantInput}
                       required
                     />
@@ -155,15 +155,17 @@ class NewPlant extends Component {
 
                 {/* <button>
                   <Link to="/progress-album">Progress Album</Link>
-                </button> */}
-                {/* <button
+                </button>  */}
+                <button
                   type="submit"
                   onSubmit={(e) =>
                     this.handleNewPlantSubmit(e, currentUser, syncUser)
                   }
-                > */}
-                <PlantToggle />
-                {/* </button> */}
+                >
+                  {" "}
+                  Submit{" "}
+                </button>
+                {/* <PlantToggle /> */}
               </div>
             </div>
           );

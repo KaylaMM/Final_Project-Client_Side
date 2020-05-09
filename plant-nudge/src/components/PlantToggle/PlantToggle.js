@@ -10,7 +10,6 @@ const PlantToggle = (props) => {
 
   return (
     <div>
-      <button className="toggle-button">Plant Details</button>
       <div>
         {userLoggedIn ? (
           userLoggedIn.plant?.length > 0 ? (
@@ -32,7 +31,10 @@ const PlantToggle = (props) => {
         ) : (
           <div></div>
         )}
-        <button onClick={() => passedDownTogglePlantForm()} />
+        <button onClick={() => passedDownTogglePlantForm()}>
+          {" "}
+          Plant Toggle{" "}
+        </button>
       </div>
     </div>
   );

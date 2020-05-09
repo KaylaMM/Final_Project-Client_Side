@@ -1,0 +1,10 @@
+.all-plants {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    margin-left: 50px;
+    margin: 0 0px 20px 500px;
+}
