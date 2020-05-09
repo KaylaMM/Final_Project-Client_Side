@@ -15,7 +15,7 @@ const PlantToggle = (props) => {
         {userLoggedIn ? (
           userLoggedIn.plant?.length > 0 ? (
             userLoggedIn.plant.map((plant, index) => {
-              const { plantName, _id } = plant;
+              const { _id } = plant;
               return (
                 <Link
                   to={`userPlants/updatePlant/${_id}`}

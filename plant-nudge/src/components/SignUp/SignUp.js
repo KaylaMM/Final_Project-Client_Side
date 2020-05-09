@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import { Redirect, Link } from "react-router-dom";
-import context, { AuthContext } from "../../context/index";
+import { Redirect } from "react-router-dom";
+import { AuthContext } from "../../context/index";
 
-import UploadedPic from "../UploadedPic/UploadedPic";
+// import UploadedPic from "../UploadedPic/UploadedPic";
 
 import "./SignUp.css";
 
@@ -13,8 +13,6 @@ class SignUp extends Component {
         {(context) => {
           const {
             formSignup: { username, password, email, phoneNumber },
-            errorMessage,
-            successMessage,
             isLoggedIn,
           } = context.state;
 
@@ -26,12 +24,12 @@ class SignUp extends Component {
               ) : (
                 <div id="signup-page">
                   <div id="signup-box">
-                    <div class="left">
+                    <div>
                       <h1>Sign Up</h1>
                       <form
                         onSubmit={async (e) => {
                           e.preventDefault();
-                          await handleSignupInput(e);
+                          await handleSignupSubmit(e);
                           this.props.history.push("/user-profile");
                         }}
                       >
@@ -83,7 +81,7 @@ class SignUp extends Component {
                         </label> */}
                         <button type="submit">Submit</button>
                       </form>
-                      <div class="right">
+                      <div>
                         {/* <img src={require("../../Assets/SignUpPic.jpg")} /> */}
                       </div>
                       {/* {message && <div>{message}</div>} */}

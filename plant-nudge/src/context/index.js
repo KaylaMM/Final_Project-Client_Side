@@ -13,7 +13,7 @@ class AuthProvider extends React.Component {
       email: "",
       password: "",
       phoneNumber: "",
-      avatar: "",
+      // avatar: "",
     },
     formLogin: {
       username: "",
@@ -36,7 +36,9 @@ class AuthProvider extends React.Component {
   };
 
   isUserLoggedIn = async () => {
+    console.log("here !~!");
     const userFound = await AUTH_SERVICE.getUser();
+    console.log(userFound);
     if (userFound.data.user) {
       this.setState((prevState) => ({
         ...prevState,
@@ -65,13 +67,12 @@ class AuthProvider extends React.Component {
   };
 
   handleSignupSubmit = (e) => {
-    e.preventDefault();
     AUTH_SERVICE.signup(this.state.formSignup)
       .then((responseFromServer) => {
-        console.log(user);
         const {
           data: { user, errorMessage, successMessage },
         } = responseFromServer;
+        console.log(user);
         if (errorMessage) {
           this.setState((prevState) => ({
             ...prevState,
@@ -80,12 +81,11 @@ class AuthProvider extends React.Component {
               email: "",
               password: "",
               phoneNumber: "",
-              avatar: "",
+              // avatar: "",
             },
             errorMessage,
           }));
         } else {
-          console.log("dsadsadsa");
           this.setState((prevState) => ({
             ...prevState,
             formSignup: {
@@ -93,7 +93,7 @@ class AuthProvider extends React.Component {
               email: "",
               password: "",
               phoneNumber: "",
-              avatar: "",
+              // avatar: "",
             },
             errorMessage: "",
             successMessage,
@@ -168,13 +168,15 @@ class AuthProvider extends React.Component {
   };
 
   handleLogout = async () => {
-    await AUTH_SERVICE.logout();
-    this.setState((prevState) => ({
-      ...prevState,
-      successMessage: "",
-      currentUser: "",
-      isLoggedIn: false,
-    }));
+    await AUTH_SERVICE.logout().then(() => {
+      this.setState((prevState) => ({
+        ...prevState,
+        successMessage: "",
+        currentUser: "",
+        isLoggedIn: false,
+      }));
+      this.props.history.push("/");
+    });
   };
 
   render() {

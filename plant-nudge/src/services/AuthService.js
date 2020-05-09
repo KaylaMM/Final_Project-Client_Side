@@ -11,7 +11,7 @@ const service = axios.create({
 
 const AUTH_SERVICE = {
   signup(userData) {
-    return service.post("/signup", userData);
+    return service.post("/auth/signup", userData);
   },
 
   login(userData) {
@@ -19,11 +19,11 @@ const AUTH_SERVICE = {
   },
 
   logout() {
-    return service.post("/logout", {});
+    return service.post("/auth/logout", {});
   },
 
   getUser() {
-    return service.get("/isLoggedIn");
+    return service.get("/auth/isLoggedIn");
   },
 };
 

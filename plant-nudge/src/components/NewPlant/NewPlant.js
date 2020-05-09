@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import axios from "axios";
-import { Redirect, Link } from "react-router-dom";
-import Calendar from "react-calendar";
+// import axios from "axios";
+import { Link } from "react-router-dom";
+// import Calendar from "react-calendar";
 
 import "./NewPlant.css";
 import NEW_PLANT_SERVICE from "../../services/PlantsService";
@@ -62,12 +62,12 @@ class NewPlant extends Component {
       newPlantType,
       newLocation,
       newAmountOfWaterNeeded,
-      newProgressPic,
+      // newProgressPic,
     } = this.state;
     return (
       <AuthContext.Consumer>
         {(context) => {
-          const { currentUser, succeMessage, errorMessage } = context.state;
+          const { currentUser } = context.state;
           const { syncUser } = context;
           return (
             <div className="createPlant">

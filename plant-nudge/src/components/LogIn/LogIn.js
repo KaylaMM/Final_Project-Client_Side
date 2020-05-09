@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Redirect, Link } from "react-router-dom";
 //might be able to remove the var context
-import context, { AuthContext } from "../../context/index";
+import { AuthContext } from "../../context/index";
 
 import "./LogIn.css";
 
@@ -13,8 +13,7 @@ class LogIn extends Component {
           const {
             formLogin: { username, password },
             //not sure if these messages are needed
-            errorMessage,
-            successMessage,
+
             isLoggedIn,
           } = context.state;
 
@@ -25,7 +24,7 @@ class LogIn extends Component {
                 <Redirect to="/user-profile" />
               ) : (
                 <div className="login-page">
-                  <img className="login-image" />
+                  <img className="login-image" alt="page-styling" />
                   <div id="login-container">
                     <div className="login-box">
                       <div className="login-text">
@@ -37,7 +36,7 @@ class LogIn extends Component {
                               id="username"
                               name="username"
                               type="text"
-                              // value={username}
+                              value={username}
                               onChange={handleLoginInput}
                             />
                           </label>
@@ -48,7 +47,7 @@ class LogIn extends Component {
                               id="password"
                               name="password"
                               type="password"
-                              // value={password}
+                              value={password}
                               onChange={handleLoginInput}
                             />
                           </label>

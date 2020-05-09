@@ -1,48 +1,47 @@
 import React, { Component } from "react";
 import Typography from "@material-ui/core/Typography";
 import plantNudgeLogo from "../../Assets/PlantNudgeLogo.jpg";
-import { Redirect, Link } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 
 import "./NavBar.css";
+import { AuthContext } from "../../context";
 
 // const homeButton = (props) => <button></button>;
 
-class NavBar extends React.Component {
+class NavBar extends Component {
   state = {
     userLoggedIn: true,
   };
 
-  logoutToggleClickHandler = () => {
-    this.setState((prevState) => {
-      return { userLoggedIn: !prevState.userLoggedIn };
-    });
-  };
-
   render() {
-    const userNavButtons = this.state.userLoggedIn ? (
-      <div className="toolbar_buttons">
-        <a className="home-button">
-          <Link to="/user-profile">Home</Link>
-        </a>
-        <a className="logout-button">
-          <Link to="/">Log Out</Link>
-        </a>
-      </div>
-    ) : null;
-
     return (
-      <header className="toolbar">
-        <nav position="static" className="navbar">
-          <div className="navbar_logodiv">
-            <img className="navbar_logo" src={plantNudgeLogo} alt="logo" />
-            <div className="spacer" />
-            <Typography className="navbar_appname" varient="title">
-              Plant Nudge
-            </Typography>
-          </div>
-          {userNavButtons}
-        </nav>
-      </header>
+      <AuthContext.Consumer>
+        {(context) => {
+          const { handleLogout } = context;
+          return (
+            <div>
+              <header className="toolbar">
+                <nav position="static" className="navbar">
+                  <div className="navbar_logodiv">
+                    <img
+                      className="navbar_logo"
+                      src={plantNudgeLogo}
+                      alt="logo"
+                    />
+                    <div className="spacer" />
+                    <Typography className="navbar_appname" varient="title">
+                      Plant Nudge
+                    </Typography>
+                  </div>
+                  <div className="logout-button">
+                    <button onClick={handleLogout}>Log Out</button>
+                  </div>
+                </nav>
+              </header>
+            </div>
+          );
+        }}
+      </AuthContext.Consumer>
     );
   }
 }

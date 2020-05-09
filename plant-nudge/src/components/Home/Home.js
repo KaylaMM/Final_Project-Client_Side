@@ -17,6 +17,7 @@ class Home extends Component {
               ) : (
                 <div className="landing-page">
                   <img
+                    alt="logo"
                     id="logo"
                     src={require("../../Assets/PlantNudgeLogo.jpg")}
                   />
@@ -30,12 +31,12 @@ class Home extends Component {
                         oasis!
                       </h3>
                       <button className="button">
-                        <Link className="link" to="/login">
+                        <Link className="link" to="/auth/login">
                           Log In
                         </Link>
                       </button>
                       <button className="button">
-                        <Link className="link" to="/signup">
+                        <Link className="link" to="/auth/signup">
                           Sign Up
                         </Link>
                       </button>
