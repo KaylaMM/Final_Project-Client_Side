@@ -2,6 +2,7 @@ import React, { Component } from "react";
 // import axios from "axios";
 import { Link } from "react-router-dom";
 // import Calendar from "react-calendar";
+import PlantToggle from "../PlantToggle/PlantToggle";
 
 import "./NewPlant.css";
 import NEW_PLANT_SERVICE from "../../services/PlantsService";
@@ -26,11 +27,23 @@ class NewPlant extends Component {
     this.setState({ [name]: value });
   };
 
+  handleNewPlantInput = (e) => {
+    const {
+      target: { name, value },
+    } = e;
+    console.log("target in new plant -=--=-", name, value);
+
+    this.setState((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+
   handleNewPlantSubmit = (e, user, cb, toggle) => {
     e.preventDefault();
     NEW_PLANT_SERVICE.newPlant({
       ...this.state,
-      planyOwner: user._id,
+      plantOwner: user._id,
     })
       .then((responseFromServer) => {
         const { currentUser } = responseFromServer.data;
@@ -69,6 +82,7 @@ class NewPlant extends Component {
         {(context) => {
           const { currentUser } = context.state;
           const { syncUser } = context;
+
           return (
             <div className="createPlant">
               <div>
@@ -84,7 +98,7 @@ class NewPlant extends Component {
                       className="validate"
                       name="newPlantType"
                       value={newPlantType}
-                      onChange={this.onChangeHandler}
+                      onChange={this.handleNewPlantInput}
                       required
                     />
                   </div>
@@ -99,7 +113,7 @@ class NewPlant extends Component {
                       className="validate"
                       name="newLocation"
                       value={newLocation}
-                      onChange={this.onChangeHandler}
+                      onChange={this.handleNewPlantInput}
                       required
                     />
                   </div>
@@ -114,7 +128,7 @@ class NewPlant extends Component {
                       className="validate"
                       name="newAmountOfWaterNeeded"
                       value={newAmountOfWaterNeeded}
-                      onChange={this.onChangeHandler}
+                      onChange={this.handleNewPlantInput}
                       required
                     />
                   </div>
@@ -134,13 +148,22 @@ class NewPlant extends Component {
                       >
                         <i>Add a Picture</i>
                       </legend>
-                      <input type="file" onChange={this.updateFileInState} />
+                      <input type="file" onChange={this.handleNewPlantInput} />
                     </div>
                   </div>
                 </form>
-                <button>
+
+                {/* <button>
                   <Link to="/progress-album">Progress Album</Link>
-                </button>
+                </button> */}
+                {/* <button
+                  type="submit"
+                  onSubmit={(e) =>
+                    this.handleNewPlantSubmit(e, currentUser, syncUser)
+                  }
+                > */}
+                <PlantToggle />
+                {/* </button> */}
               </div>
             </div>
           );
@@ -151,51 +174,3 @@ class NewPlant extends Component {
 }
 
 export default NewPlant;
-
-// constructor(props) {
-//   super(props);
-//   this.state = {};
-// }
-
-// handlePlantSubmit = (event) => {
-//   event.preventDefault();
-
-//   let newPlant = new FormData();
-//   newPlant.append("thePlantType", this.state.newPlantType);
-//   newPlant.append("thePlantLocation", this.state.newLocation);
-//   this.state.newAmountOfWaterNeeded.append(
-//     "theWaterNeeded",
-//     this.state.newAmountOfWaterNeeded
-//   );
-//   this.state.newProgressPic.append(
-//     "theProgressPic",
-//     this.state.newProgressPic
-//   );
-//   console.log(this.state);
-//   axios
-//     .post(`${process.end.REACT_APP_BASE}/userPlants/newPlant`, newPlant, {
-//       headers: {
-//         "Content-Type": "multipart/form-data",
-//       },
-//       withCredentials: true,
-//     })
-//     .then((theCreatedPlant) => {
-//       this.props.history.push("/viewPlant" + theCreatedPlant.data._id);
-//       this.setState({
-//         newPlant: "",
-//         newLocation: "",
-//         newAmountOfWaterNeeded: "",
-//       });
-//     })
-//     .catch((error) => console.log(error));
-// };
-
-// handleChange = (event) => {
-//   const { name, value } = event.target;
-//   this.setState({ [name]: value });
-//   console.log(this.state);
-// };
-
-// updateFileInState = (e) => {
-//   this.setState({ newImage: e.target.files[0] });
-// };
