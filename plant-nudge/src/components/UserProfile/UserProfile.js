@@ -9,7 +9,6 @@ import AllPlants from "../AllPlants/AllPlants";
 
 import { AuthContext } from "../../context";
 import "./UserProfile.css";
-import { requirePropFactory } from "@material-ui/core";
 // import PlantCard from "../PlantCard/PlantCard";
 
 // make api request to see if user has Avatar, if yes show in href to show it. if not, display default
@@ -40,7 +39,7 @@ class UserProfile extends Component {
     return (
       <AuthContext.Consumer>
         {(context) => {
-          const { currentUser, isLoggedIn } = context.state;
+          const { isLoggedIn } = context.state;
           return (
             <div>
               <div className="full-user-profile">
@@ -53,7 +52,7 @@ class UserProfile extends Component {
                       <img
                         className="ironplanter"
                         src={require("../../Assets/UserProfilePic.jpg")}
-                        alt="user-photo"
+                        alt="user-avatar"
                       />
                     </div>
                     <div className="new-plant-card">

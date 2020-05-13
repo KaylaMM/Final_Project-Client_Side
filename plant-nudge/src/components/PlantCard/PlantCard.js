@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 // import axios from "axios";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { AuthContext } from "../../context/index";
 
 import "./PlantCard.css";
@@ -16,7 +16,7 @@ class PlantCard extends Component {
               <img
                 className="user-plant-image"
                 src={require("../../Assets/Pathos.jpg")}
-                alt="user-plant-image"
+                alt="user-plant"
               />
               <ul className="plant-info">
                 <li>Pathos</li>

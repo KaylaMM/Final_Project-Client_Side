@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Typography from "@material-ui/core/Typography";
 import plantNudgeLogo from "../../Assets/PlantNudgeLogo.jpg";
-import { Redirect } from "react-router-dom";
+// import { Redirect } from "react-router-dom";
 
 import "./NavBar.css";
 import { AuthContext } from "../../context";
@@ -26,7 +26,7 @@ class NavBar extends Component {
                     <img
                       className="navbar_logo"
                       src={plantNudgeLogo}
-                      alt="logo"
+                      alt="icon"
                     />
                     <div className="spacer" />
                     <Typography className="navbar_appname" varient="title">

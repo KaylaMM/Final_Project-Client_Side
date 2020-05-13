@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-// import axios from "axios";
-import { Link } from "react-router-dom";
+
+// import { Link } from "react-router-dom";
 // import Calendar from "react-calendar";
-import PlantToggle from "../PlantToggle/PlantToggle";
 
 import "./NewPlant.css";
 import NEW_PLANT_SERVICE from "../../services/PlantsService";
@@ -98,7 +97,7 @@ class NewPlant extends Component {
                       type="text"
                       className="validate"
                       name="newPlantType"
-                      value={this.state.newPlantType}
+                      value={newPlantType}
                       onChange={this.handleNewPlantInput}
                       required
                     />
@@ -113,7 +112,7 @@ class NewPlant extends Component {
                       type="text"
                       className="validate"
                       name="newLocation"
-                      value={this.state.newLocation}
+                      value={newLocation}
                       onChange={this.handleNewPlantInput}
                       required
                     />
@@ -128,7 +127,7 @@ class NewPlant extends Component {
                       type="text"
                       className="validate"
                       name="newAmountOfWaterNeeded"
-                      value={this.state.newAmountOfWaterNeeded}
+                      value={newAmountOfWaterNeeded}
                       onChange={this.handleNewPlantInput}
                       required
                     />
