@@ -119,7 +119,7 @@ input[type="phoneNumber"] {
     transition: 0.2s ease;
 }
 
-button {
+.signin-submit {
     background-color: #fef5ef;
     width: 80px;
     height: 30px;
