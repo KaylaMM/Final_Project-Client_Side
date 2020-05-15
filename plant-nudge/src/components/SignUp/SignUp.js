@@ -79,11 +79,14 @@ class SignUp extends Component {
                           Profile Photo:
                           <UploadedPic />
                         </label> */}
-                        <FormGroup>
-                          <button className="signin-submit" type="submit">
-                            Submit
-                          </button>
-                        </FormGroup>
+
+                        <button
+                          className="signin-submit"
+                          type="submit"
+                          onChange={handleSignupSubmit}
+                        >
+                          Submit
+                        </button>
                       </form>
                       <div>
                         {/* <img src={require("../../Assets/SignUpPic.jpg")} /> */}

@@ -4,7 +4,6 @@ import { Redirect, Link } from "react-router-dom";
 import { AuthContext } from "../../context/index";
 
 import "./LogIn.css";
-import { requirePropFactory } from "@material-ui/core";
 
 class LogIn extends Component {
   render() {
@@ -57,10 +56,12 @@ class LogIn extends Component {
                             />
                           </label>
 
-                          <button>
-                            <Link className="link" to="/user-profile">
-                              Log In
-                            </Link>
+                          <button
+                            className="login-submit"
+                            type="submit"
+                            onChange={handleLoginSubmit}
+                          >
+                            Log In
                           </button>
                         </form>
                       </div>
