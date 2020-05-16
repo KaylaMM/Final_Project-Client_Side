@@ -178,6 +178,7 @@ class AuthProvider extends React.Component {
       this.props.history.push("/");
     });
   };
+  console.log("MEEEEEEMIIIII N DAAAHHHHDDEEEEE");
 
   render() {
     const {
