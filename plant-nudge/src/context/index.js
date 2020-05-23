@@ -126,6 +126,8 @@ class AuthProvider extends React.Component {
     }));
   };
 
+  //issue happening between lines 131 & 170
+
   handleLoginSubmit = (e) => {
     e.preventDefault();
     AUTH_SERVICE.login(this.state.formLogin)
