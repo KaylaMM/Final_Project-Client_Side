@@ -15,7 +15,14 @@ const AUTH_SERVICE = {
   },
 
   login(userData) {
-    return service.post("/auth/login", userData);
+    console.log({
+      ...userData,
+      email: "webdev@sandra.com",
+    });
+    return service.post("/auth/login", {
+      ...userData,
+      email: "webdev@sandra.com",
+    });
   },
 
   logout() {

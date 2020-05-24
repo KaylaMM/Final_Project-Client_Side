@@ -130,12 +130,15 @@ class AuthProvider extends React.Component {
 
   handleLoginSubmit = (e) => {
     e.preventDefault();
+    console.log("HELLO", this.state.formLogin);
     AUTH_SERVICE.login(this.state.formLogin)
       .then((responseFromServer) => {
+        console.log(responseFromServer);
         const {
           data: { user, errorMessage },
         } = responseFromServer;
         if (errorMessage) {
+          console.log(errorMessage);
           this.setState((prevState) => ({
             ...prevState,
             formLogin: {
@@ -155,6 +158,7 @@ class AuthProvider extends React.Component {
             currentUser: user,
             isLoggedIn: true,
           }));
+          console.log(this.state.isLoggedIn);
           this.isUserLoggedIn();
           this.props.history.push("/app");
         }
