@@ -9,8 +9,6 @@ class PlantCard extends Component {
   render() {
     return (
       <AuthContext.Consumer>
-        {(context) => {
-          const { currentUser, isLoggedIn } = context.state;
           return (
             <div className="plant-card">
               <img
@@ -26,7 +24,6 @@ class PlantCard extends Component {
               </ul>
             </div>
           );
-        }}
       </AuthContext.Consumer>
     );
   }

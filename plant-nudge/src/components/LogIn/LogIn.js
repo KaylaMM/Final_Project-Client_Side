@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Redirect, Link } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 //might be able to remove the var context
 import { AuthContext } from "../../context/index";
 
@@ -12,8 +12,6 @@ class LogIn extends Component {
         {(context) => {
           const {
             formLogin: { username, password },
-            //not sure if these messages are needed
-
             isLoggedIn,
           } = context.state;
 

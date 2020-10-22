@@ -9,15 +9,12 @@ import { AuthContext } from "../../context";
 // const homeButton = (props) => <button></button>;
 
 class NavBar extends Component {
-  state = {
-    userLoggedIn: true,
-  };
+
 
   render() {
     return (
       <AuthContext.Consumer>
-        {(context) => {
-          const { handleLogout } = context;
+       
           return (
             <div>
               <header className="toolbar">
@@ -34,13 +31,11 @@ class NavBar extends Component {
                     </Typography>
                   </div>
                   <div className="logout-button">
-                    <button onClick={handleLogout}>Log Out</button>
+                    <button>Log Out</button>
                   </div>
                 </nav>
               </header>
             </div>
-          );
-        }}
       </AuthContext.Consumer>
     );
   }
