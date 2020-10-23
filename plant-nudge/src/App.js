@@ -27,10 +27,10 @@ function App() {
         <Route exact path="/">
           <UserProfile />
         </Route>
-        {/* <Route exact path="/auth/login" render={LogIn} />
+        <Route exact path="/auth/login" render={LogIn} />
         <Route exact path="/auth/signup" render={SignUp} />
         <Route exact path="/progress-album" render={ProgressAlbum} />
-        <Route exact path="/" render={Home} /> */}
+        <Route exact path="/" render={Home} />
       </Switch>
     </div>
   );
