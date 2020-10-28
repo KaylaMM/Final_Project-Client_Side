@@ -8,6 +8,9 @@ class AllPlants extends Component {
   render() {
     return (
       <AuthContext.Consumer>
+        {(context) => {
+          const { currentUser, isLoggedIn } = context.state;
+
           return (
             <div className="all-plants">
               <PlantCard />
@@ -18,6 +21,7 @@ class AllPlants extends Component {
               <PlantCard />
             </div>
           );
+        }}
       </AuthContext.Consumer>
     );
   }

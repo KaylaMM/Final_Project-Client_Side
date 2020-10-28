@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Redirect } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 //might be able to remove the var context
 import { AuthContext } from "../../context/index";
 
