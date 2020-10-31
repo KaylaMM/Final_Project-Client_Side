@@ -3,7 +3,7 @@ import "./UploadedPic.css";
 
 class UploadedPic extends Component {
   constructor(props) {
-    super(props);
+    super(this.props);
 
     this.state = {
       avatar: "",

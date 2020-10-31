@@ -7,28 +7,32 @@ import AUTH_SERVICE from "../services/AuthService";
 export const AuthContext = React.createContext();
 
 class AuthProvider extends React.Component {
-  state = {
-    formSignup: {
-      username: "",
-      email: "",
-      password: "",
-      phoneNumber: "",
-      // avatar: "",
-    },
-    formLogin: {
-      username: "",
-      password: "",
-    },
-    currentUser: "",
-    errorMessage: "",
-    successMessage: "",
-    isLoggedIn:
-      this.currentUser === ""
-        ? false
-        : this.currentUser === undefined
-        ? false
-        : true,
-  };
+  constructor() {
+    super();
+
+    this.state = {
+      formSignup: {
+        username: "",
+        email: "",
+        password: "",
+        phoneNumber: "",
+        // avatar: "",
+      },
+      formLogin: {
+        username: "",
+        password: "",
+      },
+      currentUser: "",
+      errorMessage: "",
+      successMessage: "",
+      isLoggedIn:
+        this.currentUser === ""
+          ? false
+          : this.currentUser === undefined
+          ? false
+          : true,
+    };
+  }
 
   syncUser = (user) => {
     this.setState({ currentUser: user });
