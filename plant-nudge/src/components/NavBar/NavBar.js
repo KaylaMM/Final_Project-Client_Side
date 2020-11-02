@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import Typography from "@material-ui/core/Typography";
 import plantNudgeLogo from "../../Assets/PlantNudgeLogo.jpg";
 // import { Redirect } from "react-router-dom";
@@ -8,12 +8,11 @@ import { AuthContext } from "../../context";
 
 // const homeButton = (props) => <button></button>;
 
-class NavBar extends Component {
-  state = {
+const NavBar = () => {
+  const state = {
     userLoggedIn: true,
   };
 
-  render() {
     return (
       <AuthContext.Consumer>
         {(context) => {
@@ -45,6 +44,6 @@ class NavBar extends Component {
       </AuthContext.Consumer>
     );
   }
-}
+
 
 export default NavBar;

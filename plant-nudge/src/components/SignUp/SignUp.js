@@ -1,109 +1,105 @@
-import React, { Component } from "react";
+import React from "react";
 import { Redirect } from "react-router-dom";
 import { AuthContext } from "../../context/index";
-
-// import UploadedPic from "../UploadedPic/UploadedPic";
+import UploadedPic from "../UploadedPic/UploadedPic"
 
 import "./SignUp.css";
 
-class SignUp extends Component {
-  render() {
-    return (
-      <AuthContext.Consumer>
-        {(context) => {
-          const {
-            formSignup: { username, password, email, phoneNumber },
-            isLoggedIn,
-          } = context.state;
 
-          const { handleSignupInput, handleSignupSubmit } = context;
-          return (
-            <>
-              {isLoggedIn ? (
-                <Redirect to="/user-profile" />
-              ) : (
-                <div id="signup-page">
-                  <div id="signup-box">
-                    <div>
-                      <h1>Sign Up</h1>
-                      <form
-                        onSubmit={async (e) => {
-                          e.preventDefault();
-                          await handleSignupSubmit(e);
-                          this.props.history.push("/user-profile");
-                        }}
-                      >
-                        <label htmlFor="username">
-                          Username:
-                          <input
-                            id="username"
-                            name="username"
-                            type="username"
-                            value={username}
-                            onChange={handleSignupInput}
-                          />
-                        </label>
-                        <label htmlFor="email">
-                          Email:
-                          <input
-                            id="email"
-                            name="email"
-                            type="email"
-                            value={email}
-                            onChange={handleSignupInput}
-                          />
-                        </label>
-                        <label htmlFor="password">
-                          Password:
-                          <input
-                            id="password"
-                            name="password"
-                            type="password"
-                            value={password}
-                            onChange={handleSignupInput}
-                          />
-                        </label>
-                        <label htmlFor="phoneNumber">
-                          Phone Number:
-                          <input
-                            id="phoneNumber"
-                            name="phoneNumber"
-                            type="phoneNumber"
-                            value={phoneNumber}
-                            //using submit instead of input becuase this is optional
-                            onChange={handleSignupInput}
-                          />
-                        </label>
+const SignUp = () => {
+  return (
+    <AuthContext.Consumer>
+      {(context) => {
+        const {
+          formSignup: { username, password, email, phoneNumber },
+          isLoggedIn,
+        } = context.state;
 
-                        {/* <label htmlFor="avatar">
+        const { handleSignupInput, handleSignupSubmit } = context;
+        return (
+          <>
+            {isLoggedIn ? (
+              <Redirect to="/user-profile" />
+            ) : (
+              <div id="signup-page">
+                <div id="signup-box">
+                  <div>
+                    <h1>Sign Up</h1>
+                    <form
+                      onSubmit={async (e) => {
+                        e.preventDefault();
+                        await handleSignupSubmit(e);
+                        this.props.history.push("/user-profile");
+                      }}
+                    >
+                      <label htmlFor="username">
+                        Username:
+                        <input
+                          id="username"
+                          name="username"
+                          type="username"
+                          value={username}
+                          onChange={handleSignupInput}
+                        />
+                      </label>
+                      <label htmlFor="email">
+                        Email:
+                        <input
+                          id="email"
+                          name="email"
+                          type="email"
+                          value={email}
+                          onChange={handleSignupInput}
+                        />
+                      </label>
+                      <label htmlFor="password">
+                        Password:
+                        <input
+                          id="password"
+                          name="password"
+                          type="password"
+                          value={password}
+                          onChange={handleSignupInput}
+                        />
+                      </label>
+                      <label htmlFor="phoneNumber">
+                        Phone Number:
+                        <input
+                          id="phoneNumber"
+                          name="phoneNumber"
+                          type="phoneNumber"
+                          value={phoneNumber}
+                          //using submit instead of input becuase this is optional
+                          onChange={handleSignupInput}
+                        />
+                      </label>
+
+                      <label htmlFor="avatar">
                           Profile Photo:
                           <UploadedPic />
-                        </label> */}
+                        </label>
 
-                        <button
-                          className="signin-submit"
-                          type="submit"
-                          onChange={handleSignupSubmit}
-                        >
-                          Submit
-                        </button>
-                      </form>
-                      <div>
-                        {/* <img src={require("../../Assets/SignUpPic.jpg")} /> */}
-                      </div>
-                      {/* {message && <div>{message}</div>} */}
+                      <button
+                        className="signin-submit"
+                        type="submit"
+                        onChange={handleSignupSubmit}
+                      >
+                        Submit
+                      </button>
+                    </form>
+                    <div>
+                      <img src={require("../../Assets/SignUpPic.jpg")} />
                     </div>
+                    {/* {message && <div>{message}</div>} */}
                   </div>
                 </div>
-              )}
-            </>
-          );
-        }}
-      </AuthContext.Consumer>
-    );
-  }
-}
+              </div>
+            )}
+          </>
+        );
+      }}
+    </AuthContext.Consumer>
+  );
+};
 
-//Make sure there are no css issues with input tags inside of lables.
-//UploadedPic Component is now reuseable
 export default SignUp;

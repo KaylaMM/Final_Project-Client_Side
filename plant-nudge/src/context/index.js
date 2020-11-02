@@ -164,7 +164,7 @@ class AuthProvider extends React.Component {
           }));
           console.log(this.state.isLoggedIn);
           this.isUserLoggedIn();
-          this.props.history.push("/app");
+          this.props.history.push("/user-profile");
         }
       })
       .catch((err) => {
