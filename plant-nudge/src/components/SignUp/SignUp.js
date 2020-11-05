@@ -16,6 +16,7 @@ const SignUp = () => {
         } = context.state;
 
         const { handleSignupInput, handleSignupSubmit } = context;
+        
         return (
           <>
             {isLoggedIn ? (

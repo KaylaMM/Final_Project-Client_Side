@@ -1,45 +1,75 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./NewPlant.css";
-import NEW_PLANT_SERVICE from "../../services/PlantsService";
+// import NEW_PLANT_SERVICE from "../../services/PlantsService";
 import { AuthContext } from "../../context";
 
+
 const NewPlant = () => {
+  
+  constructor() {
+      super();
+  
+      this.state = {
+        newPlantForm: {
+          plant: "",
+          location: "",
+          waterNeeded: "",
+        },
+      };
+    }
   return (
     <AuthContext.Consumer>
       {(context) => {
-        const { currentUser } = context.state;
-        const { syncUser } = context;
+        const {
+          newPlantForm: { plant, location, waterNeeded },
+        } = context.state;
+
+        const { handleNewPlantInput, handleNewPlantSubmit } = context;
 
         return (
           <div className="createPlant">
             <div>
-              <form
-                className="new-plant-form"
-                onSubmit={(e) =>
-                  this.handleNewPlantSubmit(e, currentUser.syncUser)
-                }
-              >
+              <form className="new-plant-form">
                 <div>
                   <i>Plant Type</i>
-                  <input type="text" className="validate" />
+                  <input
+                    id="plant"
+                    name="plant"
+                    type="text"
+                    value={plant}
+                    onChange={handleNewPlantInput}
+                    className="validate"
+                  />
                 </div>
 
                 <div className="">
                   <i id="" className="">
                     Plant Location
                   </i>
-                  <input id="" type="text" className="validate" />
+                  <input
+                    id="location"
+                    name="location"
+                    type="location"
+                    value={location}
+                    onChange={handleNewPlantInput}
+                    className="validate"
+                  />
                 </div>
 
                 <div className="">
                   <i id="" className="">
                     Amount of H20 Needed
                   </i>
-                  <input id="" type="text" className="validate" />
+                  <input id="waterNeeded"
+                    name="waterNeeded"
+                    type="waterNeeded"
+                    value={waterNeeded}
+                    onChange={handleNewPlantInput}
+                    className="validate" />
                 </div>
               </form>
 
-              <button type="submit"> Submit </button>
+              <button type="submit" onChange={handleNewPlantSubmit}> Submit </button>
             </div>
           </div>
         );

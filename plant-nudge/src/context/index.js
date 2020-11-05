@@ -25,12 +25,12 @@ class AuthProvider extends React.Component {
       currentUser: "",
       errorMessage: "",
       successMessage: "",
-      isLoggedIn:
-        this.currentUser === ""
-          ? false
-          : this.currentUser === undefined
-          ? false
-          : true,
+      isLoggedIn: true
+        // this.currentUser === ""
+        //   ? false
+        //   : this.currentUser === undefined
+        //   ? false
+        //   : true,
     };
   }
 
@@ -41,20 +41,20 @@ class AuthProvider extends React.Component {
 
   isUserLoggedIn = async () => {
     console.log("here !~!");
-    const userFound = await AUTH_SERVICE.getUser();
-    console.log(userFound);
-    if (userFound.data.user) {
-      this.setState((prevState) => ({
-        ...prevState,
-        currentUser: userFound?.data?.user,
-        isLoggedIn: true,
-      }));
-    } else {
-      this.setState((prevState) => ({
-        ...prevState,
-        isLoggedIn: false,
-      }));
-    }
+    // const userFound = await AUTH_SERVICE.getUser();
+    // console.log(userFound);
+    // if (userFound.data.user) {
+    //   this.setState((prevState) => ({
+    //     ...prevState,
+    //     currentUser: userFound?.data?.user,
+    //     isLoggedIn: true,
+    //   }));
+    // } else {
+    //   this.setState((prevState) => ({
+    //     ...prevState,
+    //     isLoggedIn: false,
+    //   }));
+    // }
   };
 
   handleSignupInput = (e) => {
