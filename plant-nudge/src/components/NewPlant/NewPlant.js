@@ -20,8 +20,8 @@ const NewPlant = () => {
             <input
               id="plant"
               name="plant"
-              type="text"
-              onChange={plantInfo}
+              type="plant"
+              onChange={plantInfo.plant}
               className="validate"
             />
           </div>
@@ -34,9 +34,10 @@ const NewPlant = () => {
               id="location"
               name="location"
               type="location"
-              onChange={plantInfo}
+              onChange={plantInfo.location}
               className="validate"
             />
+
           </div>
 
           <div className="">
@@ -47,15 +48,14 @@ const NewPlant = () => {
               id="waterNeeded"
               name="waterNeeded"
               type="waterNeeded"
-              onChange={plantInfo}
+              onChange={plantInfo.waterNeeded}
               className="validate"
             />
           </div>
         </form>
 
-        <button type="submit" onChange={setPlantInfo}>
-          {" "}
-          Submit{" "}
+        <button type="submit" onClick={() => setPlantInfo()}>
+          Submit
         </button>
       </div>
     </div>

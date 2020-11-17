@@ -25,13 +25,14 @@ const UserProfile = () => {
       <div>
         <img
           className="ironplanter"
-          src={requirePropFactory("../../Assest/UserProfilePic.jpg")}
+          src=""
           alt="user-avatar"
         />
       </div>
       <div className="new-plant-card">
         <NewPlant />
       </div>
+      <AllPlants />
     </div>
     //           )}
     //         </div>
