@@ -21,7 +21,10 @@ const NewPlant = () => {
               id="plant"
               name="plant"
               type="plant"
-              onChange={plantInfo.plant}
+              onChange={(e) => {
+                console.log(e.target.value);
+                setPlantInfo(e.target.value);
+              }}
               className="validate"
             />
           </div>
@@ -34,10 +37,12 @@ const NewPlant = () => {
               id="location"
               name="location"
               type="location"
-              onChange={plantInfo.location}
+              onChange={(e) => {
+                console.log(e.target.value);
+                setPlantInfo(e.target.value);
+              }}
               className="validate"
             />
-
           </div>
 
           <div className="">
@@ -48,13 +53,19 @@ const NewPlant = () => {
               id="waterNeeded"
               name="waterNeeded"
               type="waterNeeded"
-              onChange={plantInfo.waterNeeded}
+              onChange={(e) => {
+                console.log(e.target.value);
+                setPlantInfo(e.target.value);
+              }}
               className="validate"
             />
           </div>
         </form>
 
-        <button type="submit" onClick={() => setPlantInfo()}>
+        <button type="submit" onClick={() => {
+          console.log('my state',plantInfo)
+          // setPlantInfo()
+        }}>
           Submit
         </button>
       </div>
