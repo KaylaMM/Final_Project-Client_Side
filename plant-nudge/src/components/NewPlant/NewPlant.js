@@ -1,15 +1,34 @@
 import React, { useState } from "react";
 import "./NewPlant.css";
 import { AuthContext } from "../../context";
+import PlantCard from "../PlantCard/PlantCard";
 
 const DEFAULT_PLANT = {
   plant: "",
   location: "",
-  waterNeeded: 0,
+  waterNeeded: "",
 };
 
 const NewPlant = () => {
-  const [plantInfo, setPlantInfo] = useState(DEFAULT_PLANT);
+  const [plantInfo, setPlantInfo, resetPlantInfo] = useState(DEFAULT_PLANT);
+
+  // useEffect(() => {
+  //   effect
+  //   return () => {
+  //     cleanup
+  //   }
+  // }, [input])
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setPlantInfo((prevState) => {
+      return {
+        ...prevState,
+        [name]: value,
+      };
+    });
+  };
+
 
   return (
     <div className="createPlant">
@@ -21,10 +40,8 @@ const NewPlant = () => {
               id="plant"
               name="plant"
               type="plant"
-              onChange={(e) => {
-                console.log(e.target.value);
-                setPlantInfo(e.target.value);
-              }}
+              value={plantInfo.plant}
+              onChange={handleChange}
               className="validate"
             />
           </div>
@@ -37,10 +54,8 @@ const NewPlant = () => {
               id="location"
               name="location"
               type="location"
-              onChange={(e) => {
-                console.log(e.target.value);
-                setPlantInfo(e.target.value);
-              }}
+              value={plantInfo.location}
+              onChange={handleChange}
               className="validate"
             />
           </div>
@@ -53,19 +68,19 @@ const NewPlant = () => {
               id="waterNeeded"
               name="waterNeeded"
               type="waterNeeded"
-              onChange={(e) => {
-                console.log(e.target.value);
-                setPlantInfo(e.target.value);
-              }}
+              value={plantInfo.waterNeeded}
+              onChange={handleChange}
               className="validate"
             />
           </div>
         </form>
 
-        <button type="submit" onClick={() => {
-          console.log('my state',plantInfo)
-          // setPlantInfo()
-        }}>
+        <button
+          type="submit"
+          onClick={() => setPlantInfo(""), 
+            console.log("my state", plantInfo)
+          }
+        >
           Submit
         </button>
       </div>

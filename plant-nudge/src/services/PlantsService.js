@@ -8,8 +8,8 @@ const service = axios.create({
 });
 
 const NEW_PLANT_SERVICE = {
-  createNewPLant(plant) {
-    return service.post("/userPlants/newPlant", plant, {
+  createNewPLant(plants) {
+    return service.post("/userPlants/newPlant", plants, {
       withCredentials: true,
     });
   },
