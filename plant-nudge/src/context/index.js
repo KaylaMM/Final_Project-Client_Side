@@ -76,7 +76,7 @@ class AuthProvider extends React.Component {
         const {
           data: { user, errorMessage, successMessage },
         } = responseFromServer;
-        console.log(user);
+
         if (errorMessage) {
           this.setState((prevState) => ({
             ...prevState,
@@ -134,15 +134,15 @@ class AuthProvider extends React.Component {
 
   handleLoginSubmit = (e) => {
     e.preventDefault();
-    console.log("HELLO", this.state.formLogin);
+   
     AUTH_SERVICE.login(this.state.formLogin)
       .then((responseFromServer) => {
-        console.log(responseFromServer);
+        
         const {
           data: { user, errorMessage },
         } = responseFromServer;
         if (errorMessage) {
-          console.log(errorMessage);
+         
           this.setState((prevState) => ({
             ...prevState,
             formLogin: {

@@ -12,13 +12,6 @@ const DEFAULT_PLANT = {
 const NewPlant = () => {
   const [plantInfo, setPlantInfo, resetPlantInfo] = useState(DEFAULT_PLANT);
 
-  // useEffect(() => {
-  //   effect
-  //   return () => {
-  //     cleanup
-  //   }
-  // }, [input])
-
   const handleChange = (event) => {
     const { name, value } = event.target;
     setPlantInfo((prevState) => {

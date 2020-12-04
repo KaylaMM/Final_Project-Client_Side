@@ -18,7 +18,6 @@ useEffect(() => {
   async function getPlants() {
     const response = await axios.get(`userPlants/allPlants/${plantInfo}/`);
     setPlantInfo(response.data)
-    console.log(response.data)
   }
   getPlants()
 }, [plantInfo])
