@@ -41,6 +41,7 @@ class AuthProvider extends React.Component {
 
   isUserLoggedIn = async () => {
     console.log("here !~!");
+    //Auth Context temp disabled 
     // const userFound = await AUTH_SERVICE.getUser();
     // console.log(userFound);
     // if (userFound.data.user) {
